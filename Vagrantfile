@@ -388,6 +388,9 @@ Vagrant.configure("2") do |config|
   # Install wkhtml2pdf
   # config.vm.provision "shell", path: "#{github_url}/scripts/wkhtmltopdf.sh"
 
+  # Install tutum-cli
+  # config.vm.provision "shell", path: "#{github_url}/scripts/tutum-cli.sh"
+  
 
   ####
   # Local Scripts

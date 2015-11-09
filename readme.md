@@ -115,6 +115,7 @@ Here's a quickstart screencast!
     * M4
     * Puppet Client
     * wkhtmltopdf
+    * tutum-cli
 
 ## The Vagrantfile
 
