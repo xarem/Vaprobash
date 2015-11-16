@@ -117,6 +117,7 @@ Here's a quickstart screencast!
     * wkhtmltopdf
     * tutum-cli
     * phpMyAdmin
+    * docker-nuke
 
 ## The Vagrantfile
 

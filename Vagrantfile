@@ -394,6 +394,9 @@ Vagrant.configure("2") do |config|
   # Install phpMyAdmin
   # config.vm.provision "shell", path: "#{github_url}/scripts/phpmyadmin.sh", args: [mysql_root_password]
 
+  # Install docker-nuke
+  # config.vm.provision "shell", path: "#{github_url}/scripts/docker-nuke.sh"
+
 
   ####
   # Local Scripts
