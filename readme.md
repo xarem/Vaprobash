@@ -116,6 +116,7 @@ Here's a quickstart screencast!
     * Puppet Client
     * wkhtmltopdf
     * tutum-cli
+    * phpMyAdmin
 
 ## The Vagrantfile
 
