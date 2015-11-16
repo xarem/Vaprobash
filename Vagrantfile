@@ -425,6 +425,13 @@ Vagrant.configure("2") do |config|
 
 
   ####
+  # Customization
+  ##########
+
+  #Corporate settings
+  config.vm.provision "shell", path: "#{github_url}/scripts/whatwedo.sh"
+
+  ####
   # Cleaning up
   ##########
 
