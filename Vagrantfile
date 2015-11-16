@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 # Config Github Settings
-github_username = "n3r0-ch"
+github_username = "whatwedo"
 github_repo     = "Vaprobash"
 github_branch   = "develop"
 github_url      = "https://raw.githubusercontent.com/#{github_username}/#{github_repo}/#{github_branch}"
