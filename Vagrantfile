@@ -129,8 +129,13 @@ Vagrant.configure("2") do |config|
   # TO DO: Make this work with virtualhost along-side xip.io URL
   config.vm.hostname = hostname
 
-  # Create a static IP
-  config.vm.network :private_network, ip: server_ip
+  # Configure network
+  if Vagrant.has_plugin?("vagrant-auto_network")
+    config.vm.network :private_network, :ip => "0.0.0.0", :auto_network => true
+  else
+    warn "The recommeded plugin 'vagrant-auto_network' is currently not installed. You can install it by executing: 'vagrant plugin install vagrant-auto_network'"
+    config.vm.network :private_network, ip: server_ip
+  end
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -424,6 +429,14 @@ Vagrant.configure("2") do |config|
 
   # Install docker-nuke
   # config.vm.provision "shell", path: "#{github_url}/scripts/docker-nuke.sh"
+  
+
+  ####
+  # Customization
+  ##########
+
+  #Corporate settings
+  config.vm.provision "shell", path: "#{github_url}/scripts/whatwedo.sh"
 
 
   ####
@@ -433,13 +446,6 @@ Vagrant.configure("2") do |config|
   ##########
   # config.vm.provision "shell", path: "./local-script.sh"
 
-
-  ####
-  # Customization
-  ##########
-
-  #Corporate settings
-  config.vm.provision "shell", path: "#{github_url}/scripts/whatwedo.sh"
 
   ####
   # Cleaning up
