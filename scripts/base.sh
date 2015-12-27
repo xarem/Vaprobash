@@ -93,3 +93,6 @@ __      __                   _               _
 
 # Enable cachefilesd
 echo "RUN=yes" > /etc/default/cachefilesd
+
+# Set start directory
+echo "cd $4" >> /home/vagrant/.bashrc
