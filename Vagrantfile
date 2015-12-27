@@ -48,7 +48,7 @@ server_swap = server_memory
 # EST        for Eastern Standard Time
 # US/Central for American Central
 # US/Eastern for American Eastern
-server_timezone  = "UTC"
+server_timezone  = "Europe/Zurich"
 
 # Database Configuration
 mysql_root_password   = "root"   # We'll assume user "root"
