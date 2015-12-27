@@ -147,6 +147,8 @@ For an optimal experience we are recommending the installation of the following 
 
 * [vagrant-hostmanager](https://github.com/smdahlen/vagrant-hostmanager)
 * [vagrant-cachier](https://github.com/fgrehm/vagrant-cachier)
+* [vagrant-reload](https://github.com/aidanns/vagrant-reload)
+* [vagrant-auto_network](https://github.com/oscar-stack/vagrant-auto_network)
 * [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) (VirtualBox users only)
 
 ## Connecting to MySQL from Sequel Pro:
