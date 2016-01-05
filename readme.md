@@ -37,7 +37,7 @@ $ curl -L http://welike.to/1ONvsgs > Vagrantfile
 $ wget -O Vagrantfile http://welike.to/1ONvsgs
 ```
 
-> The `bit.ly` link will always point to the master branch version of the Vagrantfile.
+> The `welike.to` link will always point to the develop branch version of the Vagrantfile.
 
 **Second**, edit the `Vagrantfile` and uncomment which scripts you'd like to run. You can uncomment them by removing the `#` character before the `config.vm.provision` line.
 
@@ -146,14 +146,13 @@ The vagrant file does three things you should take note of:
 For an optimal experience we are recommending the installation of the following Vagrant plugins:
 
 * [vagrant-hostmanager](https://github.com/smdahlen/vagrant-hostmanager)
-* [vagrant-cachier](https://github.com/fgrehm/vagrant-cachier)
 * [vagrant-reload](https://github.com/aidanns/vagrant-reload)
 * [vagrant-auto_network](https://github.com/oscar-stack/vagrant-auto_network)
 * [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) (VirtualBox users only)
 
 ## Connecting to MySQL from Sequel Pro:
 
-Change your IP address as needed. The default IP address is now `192.168.22.10`
+Change your IP address as needed.
 
 ![sequel pro vaprobash](http://fideloper.github.io/Vaprobash/img/sequel_pro.png)
 
