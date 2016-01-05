@@ -57,7 +57,7 @@ Here's a quickstart screencast!
 
 > <strong>Windows Users:</strong>
 >
-> By default, NFS won't work on Windows. I suggest deleting the NFS block so Vagrant defaults back to its default file sync behavior.
+> By default, NFS won't work on Windows. We suggest deleting the NFS block so Vagrant defaults back to its default file sync behavior.
 >
 > However, you can also try the "vagrant-winnfsd" plugin. Just run `vagrant plugin install vagrant-winnfsd` to try it out!
 >
