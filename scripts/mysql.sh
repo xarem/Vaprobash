@@ -26,6 +26,12 @@ sudo debconf-set-selections <<< "mysql-server mysql-server/root_password_again p
 # -qq implies -y --force-yes
 sudo apt-get install -qq $mysql_package
 
+# Disable binary logs
+sed -i 's/log_bin/#log_bin/g' /etc/mysql/my.cnf && \
+sed -i 's/expire_logs_days/#expire_logs_days/g' /etc/mysql/my.cnf && \
+sed -i 's/max_binlog_size/#max_binlog_size/g' /etc/mysql/my.cnf && \
+sed -i 's/#innodb_log_file_size.*/innodb_log_file_size\=256M/g' /etc/mysql/my.cnf
+
 # Make MySQL connectable from outside world without SSH tunnel
 if [ $3 == "true" ]; then
     # enable remote access
