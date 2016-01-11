@@ -30,6 +30,7 @@ sed -i 's/log_bin/#log_bin/g' /etc/mysql/my.cnf && \
 sed -i 's/expire_logs_days/#expire_logs_days/g' /etc/mysql/my.cnf && \
 sed -i 's/max_binlog_size/#max_binlog_size/g' /etc/mysql/my.cnf && \
 sed -i 's/#innodb_log_file_size.*/innodb_log_file_size\=256M/g' /etc/mysql/my.cnf
+service mysql restart
 
 # Make Maria connectable from outside world without SSH tunnel
 if [ $2 == "true" ]; then
