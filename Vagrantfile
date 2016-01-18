@@ -12,7 +12,6 @@ github_url      = "https://raw.githubusercontent.com/#{github_username}/#{github
 github_pat          = ""
 
 # Server Configuration
-
 hostname        = "vaprobash.dev"
 start_dir       = "/vagrant"
 
@@ -188,6 +187,9 @@ Vagrant.configure("2") do |config|
     # Prevent VMs running on Ubuntu to lose internet connection
     # vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     # vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+
+    # Share VPN connection from host to guest
+    # vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
 
     # Automatically update VirtualBox Guest Additions
     if Vagrant.has_plugin?("vagrant-vbguest")
