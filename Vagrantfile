@@ -105,6 +105,8 @@ rabbitmq_password = "password"
 
 sphinxsearch_version  = "rel22" # rel20, rel21, rel22, beta, daily, stable
 
+elasticsearch_version = "2.1.1" # 2.1.1, 2.0.2, 1.7.4
+
 # SSH public key
 ssh_pub_key = File.readlines("#{Dir.home}/.ssh/id_rsa.pub").first.strip
 
@@ -299,7 +301,7 @@ Vagrant.configure("2") do |config|
   ##########
 
   # Install Elasticsearch
-  # config.vm.provision "shell", path: "#{github_url}/scripts/elasticsearch.sh"
+  # config.vm.provision "shell", path: "#{github_url}/scripts/elasticsearch.sh", args: [elasticsearch_version]
 
   # Install SphinxSearch
   # config.vm.provision "shell", path: "#{github_url}/scripts/sphinxsearch.sh", args: [sphinxsearch_version]
