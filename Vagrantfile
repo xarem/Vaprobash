@@ -110,6 +110,10 @@ elasticsearch_version = "2.1.1" # 2.1.1, 2.0.2, 1.7.4
 # SSH public key
 ssh_pub_key = File.readlines("#{Dir.home}/.ssh/id_rsa.pub").first.strip
 
+# Check vagrant version
+Vagrant.require_version ">= 1.8.0"
+
+# Configure VM
 Vagrant.configure("2") do |config|
 
   # Set server to Ubuntu 14.04
@@ -201,6 +205,9 @@ Vagrant.configure("2") do |config|
     else
       warn "The recommeded plugin 'vagrant-vbguest' is currently not installed. You can install it by executing: 'vagrant plugin install vagrant-vbguest'"
     end
+
+    # Force use of linked clones
+    vb.linked_clone = true
 
   end
 

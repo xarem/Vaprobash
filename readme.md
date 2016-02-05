@@ -21,7 +21,7 @@ Some further assumptions and self-imposed restrictions. If you find yourself nee
 
 ## Dependencies
 
-* Vagrant `1.5.0`+
+* Vagrant `1.8.0`+
     * Use `vagrant -v` to check your version
 * Vitualbox or VMWare Fusion
 
@@ -60,8 +60,6 @@ Here's a quickstart screencast!
 > By default, NFS won't work on Windows. We suggest deleting the NFS block so Vagrant defaults back to its default file sync behavior.
 >
 > However, you can also try the "vagrant-winnfsd" plugin. Just run `vagrant plugin install vagrant-winnfsd` to try it out!
->
-> Vagrant version 1.5 will have [more file sharing options](https://www.vagrantup.com/blog/feature-preview-vagrant-1-5-rsync.html) to explore as well!
 
 ## Docs
 
