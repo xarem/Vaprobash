@@ -107,7 +107,7 @@ sphinxsearch_version  = "rel22" # rel20, rel21, rel22, beta, daily, stable
 
 elasticsearch_version = "2.1.1" # 2.1.1, 2.0.2, 1.7.4
 
-# SSH public key
+# Add SSH public key
 ssh_pub_key = File.readlines("#{Dir.home}/.ssh/id_rsa.pub").first.strip
 
 # Check vagrant version
@@ -191,11 +191,10 @@ Vagrant.configure("2") do |config|
     vb.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
 
     # Prevent VMs running on Ubuntu to lose internet connection
-    # vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     # vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
 
     # Share VPN connection from host to guest
-    # vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+    vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
 
     # Automatically update VirtualBox Guest Additions
     if Vagrant.has_plugin?("vagrant-vbguest")
@@ -211,28 +210,6 @@ Vagrant.configure("2") do |config|
 
   end
 
-  # If using VMWare Fusion
-  config.vm.provider "vmware_fusion" do |vb, override|
-    override.vm.box_url = "http://files.vagrantup.com/precise64_vmware.box"
-
-    # Set server memory
-    vb.vmx["memsize"] = server_memory
-
-  end
-
-  # Adding vagrant-digitalocean provider - https://github.com/smdahlen/vagrant-digitalocean
-  # Needs to ensure that the vagrant plugin is installed
-  config.vm.provider :digital_ocean do |provider, override|
-    override.ssh.private_key_path = '~/.ssh/id_rsa'
-    override.ssh.username = 'vagrant'
-    override.vm.box = 'digital_ocean'
-    override.vm.box_url = "https://github.com/smdahlen/vagrant-digitalocean/raw/master/box/digital_ocean.box"
-
-    provider.token = 'YOUR TOKEN'
-    provider.image = 'ubuntu-14-04-x64'
-    provider.region = 'nyc2'
-    provider.size = '512mb'
-  end
 
   ####
   # Base Items
