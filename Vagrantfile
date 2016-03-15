@@ -52,18 +52,18 @@ server_swap = server_memory
 server_timezone  = "Europe/Zurich"
 
 # Database Configuration
-mysql_root_password     = "root"   # We'll assume user "root"
-mysql_version           = "5.5"    # Options: 5.5 | 5.6
-mysql_enable_remote     = "false"  # remote access enabled when true
-pgsql_postgres_password = "postgres"   # We'll assume user "postgres"
-mongo_version           = "2.6"    # Options: 2.6 | 3.0
-mongo_enable_remote     = "false"  # remote access enabled when true
+mysql_root_password     = "root"        # We'll assume user "root"
+mysql_version           = "5.5"         # Options: 5.5 | 5.6
+mysql_enable_remote     = "true"        # remote access disabled when false
+pgsql_postgres_password = "postgres"    # We'll assume user "postgres"
+mongo_version           = "2.6"         # Options: 2.6 | 3.0
+mongo_enable_remote     = "true"        # remote access disabled when false
 
 # Languages and Packages
-php_timezone          = server_timezone    # http://php.net/manual/en/timezones.php
-php_version           = "5.6"    # Options: 5.5 | 5.6 | 7.0
-ruby_version          = "latest" # Choose what ruby version should be installed (will also be the default version)
-ruby_gems             = [        # List any Ruby Gems that you want to install
+php_timezone          = server_timezone  # http://php.net/manual/en/timezones.php
+php_version           = "5.6"            # Options: 5.5 | 5.6 | 7.0
+ruby_version          = "latest"         # Choose what ruby version should be installed (will also be the default version)
+ruby_gems             = [                # List any Ruby Gems that you want to install
   #"jekyll",
   #"sass",
   #"compass",
