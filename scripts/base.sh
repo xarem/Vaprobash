@@ -20,7 +20,7 @@ sudo apt-get update
 
 # Install base packages
 # -qq implies -y --force-yes
-sudo apt-get install -qq curl unzip git-core ack-grep software-properties-common build-essential telnet dnsutils cachefilesd
+sudo apt-get install -qq curl unzip zip git-core ack-grep software-properties-common build-essential telnet dnsutils cachefilesd
 
 echo ">>> Installing *.xip.io self-signed SSL"
 
