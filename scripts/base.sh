@@ -100,3 +100,4 @@ echo "cd $4" >> /home/vagrant/.bashrc
 echo ">>> adding ssh fingerprint of github.com"
 
 ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+sudo -u vagrant ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
