@@ -116,6 +116,7 @@ Here's a quickstart screencast!
     * tutum-cli
     * phpMyAdmin
     * docker-nuke
+    * mkdocs
 
 ## The Vagrantfile
 
