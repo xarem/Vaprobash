@@ -405,7 +405,7 @@ Vagrant.configure("2") do |config|
   # Install docker-nuke
   # config.vm.provision "shell", path: "#{github_url}/scripts/docker-nuke.sh"
   
-  # Install docker-nuke
+  # Install mkdocs
   # config.vm.provision "shell", path: "#{github_url}/scripts/mkdocs.sh"
   
 
