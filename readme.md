@@ -23,7 +23,7 @@ Some further assumptions and self-imposed restrictions. If you find yourself nee
 
 * Vagrant `1.8.0`+
     * Use `vagrant -v` to check your version
-* Vitualbox or VMWare Fusion
+* Virtualbox or VMWare Fusion
 
 ## Instructions
 
