@@ -82,6 +82,10 @@ else
     sudo sed -i "s/;date.timezone =.*/date.timezone = ${PHP_TIMEZONE/\//\\/}/" "${PHP_PATH}"/fpm/php.ini
     sudo sed -i "s/;date.timezone =.*/date.timezone = ${PHP_TIMEZONE/\//\\/}/" "${PHP_PATH}"/cli/php.ini
 
+    # PHP Upload Max Filesize
+    sudo sed -i "s/upload_max_filesize = .*/upload_max_filesize = 32M/" "${PHP_PATH}"/fpm/php.ini
+    sudo sed -i "s/post_max_size = .*/post_max_size = 32M/" "${PHP_PATH}"/fpm/php.ini
+
     if [ $PHP_VERSION == "7.0" ]; then
         sudo service php7.0-fpm restart
     else
