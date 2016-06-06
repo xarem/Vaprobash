@@ -408,6 +408,9 @@ Vagrant.configure("2") do |config|
   # Install mkdocs
   # config.vm.provision "shell", path: "#{github_url}/scripts/mkdocs.sh"
   
+  # Install wp-cli
+  # config.vm.provision "shell", path: "#{github_url}/scripts/wp-cli.sh"
+  
 
   ####
   # Customization
