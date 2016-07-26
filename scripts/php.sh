@@ -5,7 +5,6 @@ export LANG=C.UTF-8
 PHP_TIMEZONE=$1
 HHVM=$2
 PHP_VERSION=$3
-PHP_PATH="/etc/php5" && [[ $PHP_VERSION == "7.0" ]] && PHP_PATH="/etc/php/7.0"
 
 if [[ $HHVM == "true" ]]; then
 
@@ -34,17 +33,20 @@ else
 
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C
 
-    if [ $PHP_VERSION == "7.0" ]; then
+    if [ $PHP_VERSION == "7.0" ] ||  [ $PHP_VERSION == "7.1" ]; then
         # Fix potentially broken add-apt-repository locales
         sudo apt-get install -y language-pack-en-base
         # Add repo for PHP 5.5
         sudo LC_ALL=en_US.UTF-8 add-apt-repository -y ppa:ondrej/php
+        PHP_PATH="/etc/php/$PHP_VERSION"
     elif [ $PHP_VERSION == "5.5" ]; then
         # Add repo for PHP 5.5
         sudo add-apt-repository -y ppa:ondrej/php5
+        PHP_PATH="/etc/php5"
     else
         # Add repo for PHP 5.6
         sudo add-apt-repository -y ppa:ondrej/php5-5.6
+        PHP_PATH="/etc/php5"
     fi
 
     sudo apt-key update
@@ -52,9 +54,14 @@ else
 
     # Install PHP
     # -qq implies -y --force-yes
-    if [ $PHP_VERSION == "7.0" ]; then
-        # xdebug not yet supported by xdebug
-        sudo apt-get install -qq php7.0-cli php7.0-fpm php7.0-mysql php7.0-pgsql php7.0-sqlite php7.0-curl php7.0-gd php7.0-gmp php7.0-mcrypt php-memcached php-imagick php7.0-intl php7.0-xml
+    if [ $PHP_VERSION == "7.1" ]; then
+        # xdebug not yet supported
+        # php7.1-memcached not yet available
+        # php7.1-imagick not yet available
+        sudo apt-get install -qq php7.1-cli php7.1-fpm php7.1-mysql php7.1-pgsql php7.1-sqlite php7.1-curl php7.1-gd php7.1-gmp php7.1-mcrypt php7.1-intl php7.1-xml
+    elif [ $PHP_VERSION == "7.0" ]; then
+        # xdebug not yet supported
+        sudo apt-get install -qq php7.0-cli php7.0-fpm php7.0-mysql php7.0-pgsql php7.0-sqlite php7.0-curl php7.0-gd php7.0-gmp php7.0-mcrypt php7.0-memcached php7.0-imagick php7.0-intl php7.0-xml
     else
         sudo apt-get install -qq php5-cli php5-fpm php5-mysql php5-pgsql php5-sqlite php5-curl php5-gd php5-gmp php5-mcrypt php5-memcached php5-imagick php5-intl php5-common php5-cgi php5-imap php5-ldap php5-json  
     fi
@@ -86,7 +93,9 @@ else
     sudo sed -i "s/upload_max_filesize = .*/upload_max_filesize = 32M/" "${PHP_PATH}"/fpm/php.ini
     sudo sed -i "s/post_max_size = .*/post_max_size = 32M/" "${PHP_PATH}"/fpm/php.ini
 
-    if [ $PHP_VERSION == "7.0" ]; then
+    if [ $PHP_VERSION == "7.1" ]; then
+        sudo service php7.1-fpm restart
+    elif [ $PHP_VERSION == "7.0" ]; then
         sudo service php7.0-fpm restart
     else
         sudo service php5-fpm restart
