@@ -58,7 +58,7 @@ else
         # xdebug not yet supported
         # php7.1-memcached not yet available
         # php7.1-imagick not yet available
-        sudo apt-get install -qq php7.1-cli php7.1-fpm php7.1-mysql php7.1-pgsql php7.1-sqlite php7.1-curl php7.1-gd php7.1-gmp php7.1-mcrypt php7.1-intl php7.1-xml
+        sudo apt-get install -qq php7.1-cli php7.1-fpm php7.1-mysql php7.1-pgsql php7.1-sqlite php7.1-curl php7.1-gd php7.1-gmp php7.1-mcrypt php7.1-intl php7.1-xml php7.1-mbstring
     elif [ $PHP_VERSION == "7.0" ]; then
         # xdebug not yet supported
         sudo apt-get install -qq php7.0-cli php7.0-fpm php7.0-mysql php7.0-pgsql php7.0-sqlite php7.0-curl php7.0-gd php7.0-gmp php7.0-mcrypt php7.0-memcached php7.0-imagick php7.0-intl php7.0-xml
